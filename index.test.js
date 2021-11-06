@@ -1,10 +1,8 @@
 
 function check(a, b, c) {
-    if (a * a === b * b + c * c) {
-        return "correct";
-    }
-    else { return "incorrect"; }
-}
+    return (a * a === b * b + c * c) ?
+        "correct" : "incorrect"
+};
 
 describe("right-angle triangle?", () => {
     it("should work", () => {
