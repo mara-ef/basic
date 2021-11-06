@@ -12,35 +12,18 @@
     <script>
 
         function check(a, b, c) {
-            return (a * a === b * b + c * c)
-                || (b * b === a * a + c * c)
-                || (c * c === a * a + b * b) ?
+            return (c * c === a * a + b * b) ?
                 `Triangle with sides ${a}, ${b} and ${c} is a right-angled triangle`
                 : `Triangle with sides ${a}, ${b} and ${c} is not a right-angled triangle`
         };
 
         function triangle() {
 
-            const a = parseInt(prompt("enter side 1"));
-            const b = parseInt(prompt("enter side 2"));
-            const c = parseInt(prompt("enter side 3"));
+            const a = prompt("enter side a");
+            const b = prompt("enter side b");
+            const c = prompt("enter side hypotenuse");
 
-            const x = Math.max(a, b, c);
-            let y;
-
-            switch (x) {
-                case a:
-                    y = b + c;
-                    break;
-                case b:
-                    y = a + c;
-                    break;
-                case c:
-                    y = a + b;
-                    break;
-            };
-
-            return (x > y) ?
+            return (c < a || c < b) ?
                 document.getElementById("result").innerHTML = "re-enter your hypotenuse"
                 : document.getElementById("result").innerHTML = check(a, b, c);
         };
