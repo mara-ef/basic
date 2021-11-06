@@ -1,6 +1,9 @@
 
-function check() {
-    return "correct";
+function check(a, b, c) {
+    if (a * a === b * b + c * c) {
+        return "correct";
+    }
+    else { return "incorrect"; }
 }
 
 describe("right-angle triangle?", () => {
