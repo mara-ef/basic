@@ -46,6 +46,16 @@ describe("right-angle triangle?", () => {
 
         expect(result).toBe("correct");
     });
+
+    it("should not work", () => {
+        const a = 3;
+        const b = 4;
+        const c = 3;
+
+        const result = check(a, b, c)
+
+        expect(result).toBe("incorrect");
+    });
 });
 
 
