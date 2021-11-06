@@ -4,22 +4,17 @@
     <style>
         body {
             background-color: rgb(182, 236, 218);
+            display: grid;
         }
 
         p {
             text-align: center;
+            margin-top: 10em;
         }
 
         button {
-            border: none;
-            color: black;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: blue;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
+            width: fit-content;
+            justify-self: center;
             cursor: pointer;
         }
     </style>
@@ -47,15 +42,17 @@
             let b = "";
             let c = "";
 
-            do {
+            while (isNaN(parseInt(a))) {
                 a = prompt("enter side a");
-            } while (a === "" || isNaN(parseInt(a)))
-            while (b === "") {
+            };
+
+            while (isNaN(parseInt(b))) {
                 b = prompt("enter side b");
             };
-            while (c === "") {
+
+            while (isNaN(parseInt(c))) {
                 c = prompt("enter hypotenuse");
-            }
+            };
 
             return (c < a || c < b) ?
                 document.getElementById("result").innerHTML = "re-enter your hypotenuse"
