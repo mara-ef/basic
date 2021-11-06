@@ -1,6 +1,7 @@
 
 function check(a, b, c) {
-    return (a * a === b * b + c * c) || (b * b === a * a + c * c) ?
+    return (a * a === b * b + c * c)
+        || (b * b === a * a + c * c) ?
         "correct" : "incorrect"
 };
 
