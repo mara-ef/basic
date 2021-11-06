@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 
 <head>
+    <style>
+        body {
+            background-color: rgb(182, 236, 218);
+        }
+
+        p {
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: blue;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+    </style>
     <title>Check triangle</title>
 </head>
 
 <body>
-    <p>Want to check that a triangle is a right-angled?</p>
+    <p>Want to check that a triangle is right-angled?
+        <br />
+        Click the button
+    </p>
     <button onclick="triangle()">start</button>
     <p id="result"></p>
 
@@ -18,10 +43,19 @@
         };
 
         function triangle() {
+            let a = "";
+            let b = "";
+            let c = "";
 
-            const a = prompt("enter side a");
-            const b = prompt("enter side b");
-            const c = prompt("enter hypotenuse");
+            do {
+                a = prompt("enter side a");
+            } while (a === "" || isNaN(parseInt(a)))
+            while (b === "") {
+                b = prompt("enter side b");
+            };
+            while (c === "") {
+                c = prompt("enter hypotenuse");
+            }
 
             return (c < a || c < b) ?
                 document.getElementById("result").innerHTML = "re-enter your hypotenuse"
