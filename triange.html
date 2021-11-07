@@ -3,7 +3,7 @@
 <head>
     <style>
         body {
-            background-color: rgb(182, 236, 218);
+            background-color: rgb(163, 190, 240);
             display: grid;
         }
 
@@ -13,7 +13,8 @@
         }
 
         button {
-            width: fit-content;
+            width: 10em;
+            height: 3em;
             justify-self: center;
             cursor: pointer;
         }
@@ -30,7 +31,7 @@
     <p id="result"></p>
 
     <script>
-
+        //pythagorian theorem 
         function check(a, b, c) {
             return (c * c === a * a + b * b) ?
                 `Triangle with sides ${a}, ${b} and ${c} is a right-angled triangle`
@@ -42,21 +43,33 @@
             let b = "";
             let c = "";
 
+            //cheking that values aren't empty strings 
+            //and allowing to terminate the function by clicking "cancel" 
             while (isNaN(parseInt(a))) {
                 a = prompt("enter side a");
+                if (a === null) {
+                    return;
+                }
             };
 
             while (isNaN(parseInt(b))) {
                 b = prompt("enter side b");
+                if (b === null) {
+                    return;
+                }
             };
 
             while (isNaN(parseInt(c))) {
                 c = prompt("enter hypotenuse");
+                if (c === null) {
+                    return;
+                }
             };
-
+            //cheking that the last value is a hypotenuse and 
+            //dispaying the result
             return (c < a || c < b) ?
-                document.getElementById("result").innerHTML = "re-enter your hypotenuse"
-                : document.getElementById("result").innerHTML = check(a, b, c);
+                document.getElementById("result").innerText = "re-enter your hypotenuse"
+                : document.getElementById("result").innerText = check(a, b, c);
         };
     </script>
 </body>
